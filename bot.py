@@ -47,6 +47,7 @@ async def admin(ctx: commands.Context):
         await ctx.message.reply("you are not allowed to do this!")
     with open('admins.txt', 'a') as f:
         f.write(ctx.message.content.split()[1] + "\n")
+    admins.append(int(ctx.message.content.split()[1]))
     await ctx.message.reply(f"Successfully made <@{ctx.message.content.split()[1]}> an administrator!")
 
 @bot.command()
